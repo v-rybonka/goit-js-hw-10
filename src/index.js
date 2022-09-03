@@ -66,11 +66,13 @@ function onInputChange() {
   }
 }
 function renderCountryList(countries) {
-  countryList.innerHTML = countries.map(
-    ({ flags, name }) =>
-      `<li class="item"><img src="${flags.svg}" alt="${name.official}" width="60px" height="40px" class="flag">
+  countryList.innerHTML = countries
+    .map(
+      ({ flags, name }) =>
+        `<li class="item"><img src="${flags.svg}" alt="${name.official}" width="60px" height="40px" class="flag">
       <p class="text"> ${name.official}</p></li>`
-  );
+    )
+    .join('');
 
   console.log(renderCountryList);
 }
